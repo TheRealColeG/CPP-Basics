@@ -1,7 +1,35 @@
 #include <iostream>
+#include <vector>
+
+int getInteger();
 
 int dubs(int meme) {
 	return (meme * 2);
+}
+
+void vecVals(std::vector <int> meme) {
+
+	size_t size = meme.size();
+	std::cout << "\ncurrent vector: ";
+
+	for (size_t i = 0; i < size; i++) {
+		std::cout << meme[i] << " ";
+	}
+
+	std::cout << "\n";
+}
+
+void random() {
+	return; //Bad practice don't do this
+}
+
+void question() {
+	int meme{};
+	std::cout << "\nUnassigned int * 2 = " << meme * 2 << "\n";
+}
+
+int error() {
+	return 1;
 }
 
 int question3(int input) {
@@ -15,6 +43,14 @@ int question3(int input) {
 
 int main() 
 {
+	std::vector<int> meme;
+	std::cout << "\nDeclared not initialized vector size: " << meme.size() << "\n";
+	vecVals(meme);
+	meme.insert(meme.begin(), 3);
+	std::cout << "\nInitialized with 3 and size of: " << meme.size() << "\n";
+	vecVals(meme);
+
+
 	int input;
 
 	std::cout << "Please input an int: ";
@@ -26,6 +62,12 @@ int main()
 	std::cout << "Triple " << input << " is " << input * 3 << "\n";
 
 	question3(input);
+
+	error();
+
+	getInteger();
+
+	random();
 
 	return 0;
 }
